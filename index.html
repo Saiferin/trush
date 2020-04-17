@@ -158,14 +158,14 @@
         try {
             var r = JSON.parse(xhr.responseText),
                result = r["result"];
-            for (var i = 0; i < result.length; i++){
+             for (var i = 0; i < result.length; i++){
                   var obj = r["result"][i];
-                 
+                  output += obj;
             }
         } catch(e) {}
      } 
      
-   document.getElementById('info').innerHTML = obj;
+   document.getElementById('info').innerHTML = output;
    }
    xhr.send()
 })()
