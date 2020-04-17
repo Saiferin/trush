@@ -149,7 +149,7 @@
  <script>
 (function () {
    var app = "https://script.google.com/macros/s/AKfycbwRWkI21Rg3gpE50Uno4Leylz6-_IocpYuFjB4QdyiJFeUYaBM/exec",
-      output = '',
+       output = '',
       xhr = new XMLHttpRequest();
    xhr.open('GET', app);
    xhr.onreadystatechange = function() {
@@ -158,17 +158,17 @@
         try {
             var r = JSON.parse(xhr.responseText),
                result = r["result"];
-		output = obj;
-           
+            for (var i = 0; i < result.length; i++){
+                  var obj = r["result"][i];
+                  output += obj.join;
+            }
         } catch(e) {}
      } 
      
-    document.getElementById('info').innerHTML = output;
-
+   document.getElementById('info').innerHTML = output;
    }
    xhr.send()
 })()
-
 </script>  
 	
  <script src="https://code.jquery.com/jquery-3.5.0.js"
