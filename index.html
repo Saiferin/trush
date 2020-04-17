@@ -147,31 +147,29 @@
     })(document, window, "yandex_metrika_callbacks");
 </script>
 <script>
-function setDataGoogleTable(result) {
-    let ul = document.createElement("ul");
+(function () {
+   var app = "https://script.google.com/macros/s/AKfycbzngb-5a3tDdHJ445o5LxqeN63V_ihhF_Nxlkz3gxLyMeG3MA/exec",
+      output = '',
+      xhr = new XMLHttpRequest();
+   xhr.open('GET', app);
+   xhr.onreadystatechange = function() {
+     if (xhr.readyState !== 4) return;
+     if (xhr.status == 200) {
+        try {
+            var r = JSON.parse(xhr.responseText),
+               result = r["result"];
+            for (var i = 0; i < result.length; i++){
+                  var obj = r["result"][i];
+                  output += obj.join("<br/>") + "<br/><hr/>";
+            }
+        } catch(e) {}
+     } 
+     
+   document.getElementById('info').innerHTML = output;
+   }
+   xhr.send()
+})()
 
-    class Li {
-        constructor(data) {
-            this.elem = document.createElement("li");
-            this.elem.innerHTML = data;
-        }
-    }
-    
-    result.map((item) => {
-        let li = new Li(item[0]);
-        ul.append(li.elem);
-    });
-    
-    document.body.append(ul);  
-}
-
-const urlGoogle = "https://script.google.com/macros/s/AKfycbwRWkI21Rg3gpE50Uno4Leylz6-_IocpYuFjB4QdyiJFeUYaBM/exec";
-
-fetch(urlGoogle)
- .then(response => response.json())
- .then(result => {
-    console.log(result);
-});
 </script>   
  <script src="https://code.jquery.com/jquery-3.5.0.js"
   integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
