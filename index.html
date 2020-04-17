@@ -148,30 +148,9 @@
         } else { f(); }
     })(document, window, "yandex_metrika_callbacks");
 </script>
-<script>
-    (function () {
-   var app = "https://script.google.com/macros/s/AKfycbxYlrV08hE3hFKXAcRUt1jgSLPnWgLtaljs7xlux-9msEh7P9k/exec",
-      output = '',
-      xhr = new XMLHttpRequest();
-   xhr.open('GET', app);
-   xhr.onreadystatechange = function() {
-     if (xhr.readyState !== 4) return;
-     if (xhr.status == 200) {
-        try {
-            var r = JSON.parse(xhr.responseText),
-               result = r["result"];
-            for (var i = 0; i < result.length; i++){
-                  var obj = r["result"][i];
-                  output += obj.join("<br/>") + "<br/><hr/>";
-            }
-        } catch(e) {}
-     } 
-     
-   document.getElementById('info').innerHTML = output;
-   }
-   xhr.send()
-})()
-</script>
+ <script src="https://code.jquery.com/jquery-3.5.0.js"
+  integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+  crossorigin="anonymous"></script>
 <noscript><div><img src="https://mc.yandex.ru/watch/44593078" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
