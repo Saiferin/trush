@@ -158,19 +158,33 @@
         try {
             var r = JSON.parse(xhr.responseText),
                result = r["result"];
-            for (var i = 0; i < result.length; i++){
-                  var obj = r["result"][i];
-                  output += obj.join("<br/>") + "<br/><hr/>";
-            }
+           
         } catch(e) {}
      } 
      
-   document.getElementById('info').innerHTML = output;
+   
    }
    xhr.send()
 })()
+function setDataGoogleTable(result) {
+    let ul = document.createElement("ul");
 
-</script>   
+    class Li {
+        constructor(data) {
+            this.elem = document.createElement("li");
+            this.elem.innerHTML = data;
+        }
+    }
+    
+    result.map((item) => {
+        let li = new Li(item[0]);
+        ul.append(li.elem);
+    });
+    
+    document.getElementById('info').append(ul);  
+}	 
+</script>  
+	
  <script src="https://code.jquery.com/jquery-3.5.0.js"
   integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
   crossorigin="anonymous"></script>
