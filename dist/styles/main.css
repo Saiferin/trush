@@ -69,15 +69,23 @@ ul, li {
 
 .fas {
     font-size: 32px;
-    color: #fff;
+    color: #df5535;
 	margin-top: 30px;
 }
 
+#info{
+	max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    word-break: break-all;
+}
 
 body .menu{
-	position:absolute;right:60px;
+	position:absolute;
+	right:60px;
 	top:-7px;
-	height:90%;
+	height:75%;
 	display:-webkit-flex;
 	display:-ms-flexbox;display:flex;
 	-webkit-flex-direction:column;
@@ -105,7 +113,7 @@ body .menu:after{
 }
 body .arrow_box{
 	background:url(../images/noactive.png) no-repeat;background-size:100% 100%;
-	padding:8%;
+	padding:5%;
 	will-change:background;transition:background .2s;
 	margin:0;
 	font-size:18px;
@@ -136,7 +144,7 @@ body .arrow_box:after{
 	right:-45px;
 }
 body .arrow_box img{
-	width:18%;
+	width:12%;
 	margin-right:.8vw;
 }
 body .arrow_box a{
