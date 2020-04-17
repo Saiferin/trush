@@ -158,31 +158,17 @@
         try {
             var r = JSON.parse(xhr.responseText),
                result = r["result"];
+		output = obj;
            
         } catch(e) {}
      } 
      
-   
+    document.getElementById('info').innerHTML = output;
+
    }
    xhr.send()
 })()
-function setDataGoogleTable(result) {
-    let ul = document.createElement("ul");
 
-    class Li {
-        constructor(data) {
-            this.elem = document.createElement("li");
-            this.elem.innerHTML = data;
-        }
-    }
-    
-    result.map((item) => {
-        let li = new Li(item[0]);
-        ul.append(li.elem);
-    });
-    
-    document.getElementById('info').append(ul);  
-}	 
 </script>  
 	
  <script src="https://code.jquery.com/jquery-3.5.0.js"
