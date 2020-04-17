@@ -70,7 +70,7 @@
     <p class="arrow_box calendar"><img src="dist/images/news.svg" alt=""><a href="https://calendar.google.com/calendar/b/1?cid=NmxuOGdjMHRrdmpsZTIwajJ1OHJ1cXR1dWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">Календарь обучения</a></p>
     <p class="arrow_box contacts"><img src="dist/images/agenda.svg" alt=""><span><a href="tel:+7 (926) 847-66-93">+7 (926) 847-66-93</a><br>
         <a href="mailto:to.oneness@gmail.com">to.oneness@gmail.com</a></span></p>
-    <p class="arrow_box calendar" id="info"><iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRLQxdfZzuMWdXDTtvwG_uG8FDoORfc72lLpZR8qXsCOtBodceI3bgNra253-EI1oQxbeB_IorvStCf/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe></a></p>
+    <p class="arrow_box calendar" id="info"></p>
 </div>
 <footer>
     <div class="social">
@@ -148,7 +148,31 @@
         } else { f(); }
     })(document, window, "yandex_metrika_callbacks");
 </script>
- <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+(function () {
+   var app = "https://script.google.com/macros/s/AKfycbxfwM862h4Q-ZqRZk82IAPiIxQUtYikL-7u_F6bonXcyHrAr8g/exec",
+      output = '',
+      xhr = new XMLHttpRequest();
+   xhr.open('GET', app);
+   xhr.onreadystatechange = function() {
+     if (xhr.readyState !== 4) return;
+     if (xhr.status == 200) {
+        try {
+            var r = JSON.parse(xhr.responseText),
+               result = r["result"];
+            for (var i = 0; i < result.length; i++){
+                  var obj = r["result"][i];
+                  output += obj.join("<br/>") + "<br/><hr/>";
+            }
+        } catch(e) {}
+     } 
+     
+   document.getElementById('info').innerHTML = output;
+   }
+   xhr.send()
+})()
+</script>	
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <noscript><div><img src="https://mc.yandex.ru/watch/44593078" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
