@@ -146,88 +146,29 @@
         } else { f(); }
     })(document, window, "yandex_metrika_callbacks");
 </script>
-<script>
-    (function() {
-        var tasks = "1pf69IBuiNcSXqaO6KEOj0UXmUu-2x33_3hj77W32bqY";//уникальный идентификатор нашей таблицы
-
-    })
-    function loadTasks (query) {
-    googleQuery (tasks, '0', 'A', "SELECT * ORDER BY A DESC");
-    //Эту функцию создал я для удобства. Она принимает следующие параметры по порядку:
-    //1. Уникальный идентификатор таблицы;
-    //2. Числовой идентификатор листа. По умолчанию у первого листа таблицы после ее  создания он равен нулю.
-             
-    //   При создании других листов генерируется 8-ми значный числовой идентификатор. 
-    //   Увидеть его можно в адресной строке в параметре "gid" (например,   ("gid=99808602").
-           
-    //3. Столбцы, в которых будет осуществляться поиск согласно запросу.
-    //4. Текст запроса в SQL-подобном формате. Обратите внимание, что формат все-таки отличается от SQL.
-             
-    }
-    function googleQuery (sheet_id, sheet, range, query) {
-    google.charts.load('45', {'packages':['corechart']});//загружаем библиотеку Google Charts
-    google.charts.setOnLoadCallback (queryTable);//обозначаем, какая функция будет 
-        //запущена по готовности библиотеки
-
-    function queryTable () {
-        //объект с настройками
-        var opts = {sendMethod: 'auto'};
-        //сама функция, выполняющая запрос к таблице
-        var gquery = new google.visualization.Query('https://docs.google.com/spreadsheets/d/'+sheet_id+'/gviz/tq?gid='+sheet+'&range='+range+'&headers=1&tq='+query, opts);
-        //обозначаем, какая функция будет запущена при получении результатов
-        gquery.send (callback);
-    }
-
-    function callback (e) {
-        if (e.isError () ) {
-            console.log('Error in query: ' + e.getMessage () + ' ' + e.getDetailedMessage ());
-            return;
-        }//если ошибка, то записываем ее в консоль
-
-        var data = e.getDataTable ();//если ошибки нет, то формируем данные для 
-                //дальнейшей работы
-        tasksTable (data); //передаем их в функцию, которая обработает данные и сформирует из них нашу таблицу
-    }
-}
-//функция, которая обработает данные, полученные при выполнении запроса и сформирует из них таблицу
-function tasksTable (data) {
-    $('#tasksTableDiv').html(function(){
-        //внутри объекта data находятся еще два объекта:
-        //Sf - хранит в себе данные из первой строки таблицы, принимая их за заголовки
-        //Tf - хранит в себе данные строк таблицы в виде массива
-        
-        var th = '';
-        for (i = 0; i < data.Sf.length; i++){
-            //формируем заголовки таблицы
-            th += '<th>'+data.Sf[i].label+'</th>';
-        }
-
-        th ='<tr>'+th+'<th>Удалить</th></tr>';
-
-        var tr = '';
-        for ( i = 0; i < data.Tf.length; i++ ) {
-            var status = ( data.Tf[i].c[2].v == 0 ) ? 'В очереди' : 'Выполнена';
-            var color = ( data.Tf[i].c[2].v == 1 ) ? 'class="table-success"' : '';
-            //внутри "c" (content) может содержаться два значения:
-            //v - само значение (value)
-            //f - значение в форматированном виде. Время мы будем брать именно отсюда
-            
-            //формируем содержание таблицы
-            tr += '<tr '+color+'>'+
-                        '<td>'+data.Tf[i].c[0].f+'</td>'+
-                        '<td>'+data.Tf[i].c[1].v+'</td>'+
-                        '<td><button type="button" class="btn btn-link" onclick="updateTaskModal(\''+data.Tf[i].c[1].v+'\', \''+data.Tf[i].c[2].v+'\', \'status\')">'+status+'</button></td>'+
-                        '<td><button type="button" class="btn btn-link" onclick="deleteTask(\''+data.Tf[i].c[1].v+'\')">Удалить</button></td>'+
-                    '</tr>';
-        }
-        //формируем и возвращаем готовую таблицу
-        return '<table class="table"><thead>'+th+'</thead><tbody>'+tr+'</tbody></table>'
-    })
-    $( document ).ready(function() {//функция запускается, как только страница будет готова для просмотра пользователю
-    loadTasks ();
-});
-
-}
+ <script>
+(function () {
+   var app = "https://script.google.com/macros/s/AKfycbzngb-5a3tDdHJ445o5LxqeN63V_ihhF_Nxlkz3gxLyMeG3MA/exec",
+      output = '',
+      xhr = new XMLHttpRequest();
+   xhr.open('GET', app);
+   xhr.onreadystatechange = function() {
+     if (xhr.readyState !== 4) return;
+     if (xhr.status == 200) {
+        try {
+            var r = JSON.parse(xhr.responseText),
+               result = r["result"];
+            for (var i = 0; i < result.length; i++){
+                  var obj = r["result"][i];
+                  output += obj.join("<br/>") + "<br/><hr/>";
+            }
+        } catch(e) {}
+     } 
+     
+   document.getElementById('info').innerHTML = output;
+   }
+   xhr.send()
+})()
 
 </script>   
  <script src="https://code.jquery.com/jquery-3.5.0.js"
