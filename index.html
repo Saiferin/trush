@@ -148,6 +148,24 @@
 </script>
 <script>
 (function () {
+	function setDataGoogleTable(result) {
+    let ul = document.createElement("ul");
+
+    class Li {
+        constructor(data) {
+            this.elem = document.createElement("li");
+            this.elem.innerHTML = data;
+        }
+    }
+    
+    result.map((item) => {
+        let li = new Li(item[0]);
+        ul.append(li.elem);
+    });
+    
+    document.body.append(ul);  
+}
+
    var app = "https://script.google.com/macros/s/AKfycbzngb-5a3tDdHJ445o5LxqeN63V_ihhF_Nxlkz3gxLyMeG3MA/exec",
       output = '',
       xhr = new XMLHttpRequest();
@@ -158,10 +176,7 @@
         try {
             var r = JSON.parse(xhr.responseText),
                result = r["result"];
-            for (var i = 0; i < result.length; i++){
-                  var obj = r["result"][i];
-                  output += obj.join("<br/>") + "<br/><hr/>";
-            }
+           	setDataGoogleTable(result)
         } catch(e) {}
      } 
      
