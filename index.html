@@ -170,7 +170,7 @@ const urlGoogle = "https://script.google.com/macros/s/AKfycbwRWkI21Rg3gpE50Uno4L
 fetch(urlGoogle)
  .then(response => response.json())
  .then(result => {
-    setDataGoogleTable(result.result);
+    console.log(result);
 });
 </script>   
  <script src="https://code.jquery.com/jquery-3.5.0.js"
