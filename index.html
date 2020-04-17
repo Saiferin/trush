@@ -21,40 +21,40 @@
         <li class="nav-item">
             <i class="fas fa-check"></i>
             <p class="nav-text">
-                Оргдизайн
+                результативность
             </p>
         </li>
          <li class="nav-item">
             <i class="fas fa-check"></i>
              <p class="nav-text">
-                 Процессы
+                 производительность
              </p>
             
         </li>
         <li class="nav-item">
             <i class="fas fa-check"></i>
             <p class="nav-text">
-                Системы
+                эффективность
             </p>
              
         </li>
         <li class="nav-item">
             <i class="fas fa-check"></i>
             <p class="nav-text">
-                Эффективность
+                оргдизайн
             </p>
              
         </li>
         <li class="nav-item">
             <i class="fas fa-check"></i>
             <p class="nav-text">
-                Производительность
+                системы
             </p>            
         </li>
         <li class="nav-item">
             <i class="fas fa-check"></i>
             <p class="nav-text">
-                Реультативность
+                процессы
             </p>
         </li>           
     </ul>
@@ -67,10 +67,8 @@
 <div class="menu">
     <p class="arrow_box site"><img src="dist/images/pointer.svg" alt=""><a href="https://docs.google.com/spreadsheets/d/1oZ6eEIGX4hxsKK4yQ6U5Ymf9Ps2ZtHdiPpFVxARuIVA/edit?usp=sharing" target="_blank">Темы и программы</a></p>
     <p class="arrow_box knowledge"><img src="dist/images/pdf.svg" alt=""><a href="https://trushkin.online/file/cv.pdf" target="_blank">Знания и результаты</a></p>
-    <p class="arrow_box calendar"><img src="dist/images/news.svg" alt=""><a href="https://calendar.google.com/calendar/b/1?cid=NmxuOGdjMHRrdmpsZTIwajJ1OHJ1cXR1dWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">Календарь обучения</a></p>
-    <p class="arrow_box contacts"><img src="dist/images/agenda.svg" alt=""><span><a href="tel:+7 (926) 847-66-93">+7 (926) 847-66-93</a><br>
-        <a href="mailto:to.oneness@gmail.com">to.oneness@gmail.com</a></span></p>
-    <p class="arrow_box calendar" id="info"></p>
+    <p class="arrow_box calendar"><img src="dist/images/news.svg" alt=""><a href="https://calendar.google.com/calendar/b/1?cid=NmxuOGdjMHRrdmpsZTIwajJ1OHJ1cXR1dWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">Календарь обучения</a></p>    
+    <div class="arrow_box calendar" id="info"></div>
 </div>
 <footer>
     <div class="social">
@@ -162,7 +160,7 @@
                result = r["result"];
             for (var i = 0; i < result.length; i++){
                   var obj = r["result"][i];
-                  output += obj.join("<br/>") + "<br/><hr/>";
+                  output += obj.join();
             }
         } catch(e) {}
      } 
@@ -171,9 +169,12 @@
    }
    xhr.send()
 })()
-</script>	
-<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</script>   
+ <script src="https://code.jquery.com/jquery-3.5.0.js"
+  integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+  crossorigin="anonymous"></script>
+
+<script src="main.js"></script>
 <noscript><div><img src="https://mc.yandex.ru/watch/44593078" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
