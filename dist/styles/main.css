@@ -288,10 +288,14 @@ body footer .owner p a{
 		height:90%;
 	}
 }
-@media screen and (max-width:500px) and (orientation:portrait){
+@media screen and (max-width:501px) and (orientation:portrait){
 	body,body .menu,html{
 		height:auto;
 	}
+	#info{
+		font-size: 12px;
+	}
+	
 	body .menu,body footer,body pre{
 		position:relative;
 	}
@@ -320,7 +324,7 @@ body footer .owner p a{
 		margin:5px;
 		padding:5px 10px;
 		width:calc(100% - 35px);
-		background:url(../images/noactive320.png) no-repeat;background-size:100% 100%
+		
 	}
 	body .menu .arrow_box:hover{
 		background:url(../images/active320.png) no-repeat;background-size:100% 100%
@@ -359,9 +363,30 @@ body footer .owner p a{
 		width:25px;
 		margin:5px 0;
 	}
+	body pre {
+	    position: absolute;
+	    top: 33%;
+	    left: 11.3%;
+	}
+	.nav{
+	     display: block;	
+	}
+	.nav-text {
+	     font-size: 18px;
+	}
+	.nav-item {
+	     height: 18px;
+	}
 }
 @media screen and (max-width:360px) and (orientation:portrait){
 	body pre{
 		margin:260px auto 0;
 		}
+	.nav{
+		display: none;
+		}
+	#info{
+		font-size: 12px;
+	}
+		
 	}
