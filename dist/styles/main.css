@@ -304,7 +304,7 @@ body footer .owner p a{
 	}
 	body{
 		padding-top:10px;
-		background:url(../images/phone_bg.jpg) top center no-repeat;background-size:contain
+		
 	}
 	body .logo{
 		display:block;
@@ -319,9 +319,9 @@ body footer .owner p a{
 		margin:330px auto 0;
 	}
 	body .menu{
-		width:100%;
+		width:92%;
 		top:auto;
-		right:0;
+		right:-23px;
 	}
 	body .menu .arrow_box{
 		margin:5px;
@@ -368,7 +368,7 @@ body footer .owner p a{
 	}
 	
 	.nav{
-	     display: block;	
+	     display: none;	
 	}
 	.nav-text {
 	     font-size: 18px;
