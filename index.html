@@ -159,15 +159,12 @@
      if (xhr.status == 200) {
         try {
             var r = JSON.parse(xhr.responseText),
-               result = r["result"];
-            for (var i = 0; i < result.length; i++){
-                  var obj = r["result"][i];
-                 
-            }
+             setDataGoogleTable(r["result"])
+           
         } catch(e) {}
      } 
      
-  
+ 
    }
    xhr.send()
 })()
