@@ -103,13 +103,15 @@ body .arrow_box:after,body .menu:after{
 body .menu:after{
 	display:block;
 	width:1px;
-	height:80%;
+	height:72%;
 	position:absolute;
 	-webkit-transform:translateY(-50%);
 	-ms-transform:translateY(-50%);
 	transform:translateY(-50%);
 	right:-26px;
 	background:#df5535;
+	top: 252px;
+	
 }
 body .arrow_box{
 	background:url(../images/noactive.png) no-repeat;background-size:100% 100%;
@@ -238,7 +240,8 @@ body footer .owner p a{
 		font-size:1.7vh;
 	}
 	body .menu:after{
-		height:50%;
+		      height: 62%;
+   			 top: 304px;
 	}
 	body footer .social a{
 		height:50%;
