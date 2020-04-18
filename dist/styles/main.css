@@ -290,6 +290,13 @@ body footer .owner p a{
 	body footer .social a{
 		height:90%;
 	}
+	.nav{
+		margin-top: 145px;
+    		margin-left: 15px;
+	}
+	.nav-text {	
+	    margin-left: -51px;
+	}
 }
 @media screen and (max-width:500px) and (orientation:portrait){
 	body,body .menu,html{
@@ -350,7 +357,7 @@ body footer .owner p a{
 		right:-25px;
 	}
 	body .menu:after{
-		height:150px;
+		height:0px;
 		right:14px;
 	}
 	body footer{
