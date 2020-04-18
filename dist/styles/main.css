@@ -74,9 +74,12 @@ ul, li {
 	margin-top: 30px;
 }
 
-#info{
+#info li{
 	color: #fff;
+	margin-bottom: 5px;
 }
+
+
 
 body .menu{
 	position:absolute;
