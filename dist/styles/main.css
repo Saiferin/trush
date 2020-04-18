@@ -291,7 +291,7 @@ body footer .owner p a{
 		height:90%;
 	}
 }
-@media screen and (max-width:501px) and (orientation:portrait){
+@media screen and (max-width:500px) and (orientation:portrait){
 	body,body .menu,html{
 		height:auto;
 	}
@@ -379,7 +379,7 @@ body footer .owner p a{
 }
 @media screen and (max-width:360px) and (orientation:portrait){
 	body pre{
-		margin:260px auto 0;
+		margin:180px auto 0;
 		}
 	.nav{
 		display: none;
