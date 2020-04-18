@@ -79,7 +79,9 @@ ul, li {
 	margin-bottom: 5px;
 }
 
-
+.fs{
+	font-size: 35px;
+}
 
 body .menu{
 	position:absolute;
@@ -222,9 +224,7 @@ body footer .owner p a{
 	color:inherit;
 }
 
-.fs{
-	font-size: 35px;
-}
+
 @media screen and (max-width:768px){
 	body pre{
 		left:0;
