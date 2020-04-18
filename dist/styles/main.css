@@ -157,6 +157,7 @@ body .arrow_box a{
 	border-bottom:1px solid #fff;
 	will-change:color,border-color;
 	transition:color .2s,border-color .2s;
+	font-size: 35px;
 }
 body .arrow_box:hover{
 	background:url(../images/active.png) no-repeat;background-size:100% 100%;
@@ -220,12 +221,6 @@ body footer .owner p{
 }
 body footer .owner p a{
 	color:inherit;
-}
-.fs{
-	font-size: 35px;
-}
-.menu a{
-font-size: 35px;
 }
 
 
