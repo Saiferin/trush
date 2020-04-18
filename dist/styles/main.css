@@ -244,6 +244,13 @@ body footer .owner p a{
 		height:50%;
 		width:5%;
 	}
+	.nav{
+		margin-top: 145px;
+    		margin-left: 15px;
+	}
+	.nav-text {	
+	    margin-left: -51px;
+	}
 }
 @media screen and (max-width:768px) and (orientation:landscape){
 	body{
