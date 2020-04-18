@@ -82,6 +82,9 @@ ul, li {
 .fs{
 	font-size: 35px;
 }
+.menu a{
+font-size: 35px;
+}
 
 body .menu{
 	position:absolute;
