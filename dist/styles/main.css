@@ -221,6 +221,10 @@ body footer .owner p{
 body footer .owner p a{
 	color:inherit;
 }
+
+.arrow_box a{
+	font-size: 35px;
+}
 @media screen and (max-width:768px){
 	body pre{
 		left:0;
